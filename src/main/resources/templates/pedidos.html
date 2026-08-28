@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Pedido recibido | Salsa Pícara</title>
+
+
+    <!-- =========================================
+         FUENTES
+         ========================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS
+         ========================================= -->
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/estilos.css}"
+        href="/css/estilos.css"
+    >
+
+</head>
+
+
+<body class="inner-page success-page">
+
+
+    <!-- =========================================
+         ENCABEZADO
+         ========================================= -->
+
+    <header class="site-header">
+
+        <a class="brand" href="/">
+
+            <span class="brand-mark">
+                SP
+            </span>
+
+            <span>
+                Salsa Pícara
+            </span>
+
+        </a>
+
+    </header>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+         ========================================= -->
+
+    <main class="success-wrap">
+
+        <section class="success-card">
+
+
+            <!-- -----------------------------------------
+                 CONFIRMACIÓN
+                 ----------------------------------------- -->
+
+            <span
+                class="success-star"
+                aria-hidden="true"
+            >
+                ✦
+            </span>
+
+
+            <p class="eyebrow">
+                Pedido confirmado
+            </p>
+
+
+            <h1>
+                ¡Qué buena <em>elección!</em>
+            </h1>
+
+
+            <p class="success-copy">
+                Recibimos tu pedido.
+                Pronto nos pondremos en contacto contigo
+                para dejar todo listo.
+            </p>
+
+
+            <!-- -----------------------------------------
+                 RESUMEN DEL PEDIDO
+                 ----------------------------------------- -->
+
+            <div class="order-summary">
+
+                <p>
+                    Resumen de tu pedido
+                </p>
+
+                <pre th:text="${mensaje}">
+Tu pedido aparecerá aquí.
+                </pre>
+
+            </div>
+
+
+            <!-- -----------------------------------------
+                 VOLVER AL INICIO
+                 ----------------------------------------- -->
+
+            <a
+                href="/"
+                class="boton"
+            >
+                Volver al inicio
+
+                <span aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

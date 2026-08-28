@@ -1,0 +1,27 @@
+# Local credentials and environment overrides
+.env*
+!.env.example
+**/application.properties
+
+# IDE metadata
+.vscode/
+.idea/
+.settings/
+.classpath
+.project
+
+# Local databases and runtime files
+data/
+*.mv.db
+*.trace.db
+*.lock.db
+*.log
+
+# Gradle and compiled output
+.gradle/
+build/
+bin/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
