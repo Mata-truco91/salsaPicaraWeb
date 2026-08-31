@@ -398,6 +398,10 @@ body {
     border-color: #9d2c1e;
 }
 
+.field input.postal-code {
+    letter-spacing: 0.08em;
+}
+
 
 /* =========================================
    CONFIRMACIÓN DEL PEDIDO

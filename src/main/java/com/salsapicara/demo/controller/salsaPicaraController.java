@@ -25,27 +25,27 @@ public String inicio(Model model) {
     model.addAttribute("presentacion", "Botella de vidrio 250 ml");
     return "index";
 }
+
+
 @PostMapping("/pedidos")
 public String pedido(
         @RequestParam("nombre") String nombre,
         @RequestParam("telefono") String telefono,
         @RequestParam("cantidad") int cantidad,
+        @RequestParam("CodigoPostal") String codigoPostal,
         Model model) {
 
             int precio = 150;
     int total = precio * cantidad;
 
-   Pedido pedidos1 = new Pedido(
-    nombre,
-    telefono,
-    cantidad,
-    total
-);
+   Pedido pedidos1 = new Pedido(nombre, telefono, cantidad, codigoPostal, total);
+
     String mensaje =
             "Nuevo pedido - Salsa Pícara\n\n" +
             "Cliente: " + pedidos1.getNombre() + "\n" +
             "Teléfono: " + pedidos1.getTelefono() + "\n" +
             "Cantidad: " + pedidos1.getCantidad() + "\n" +
+            "Código Postal: " + pedidos1.getcodigoPostal() + "\n" +
             "Total: $" + pedidos1.getTotal() + " MXN";
          
             
@@ -55,6 +55,7 @@ public String pedido(
     model.addAttribute("nombre", nombre);
     model.addAttribute("telefono", telefono);
     model.addAttribute("cantidad", cantidad);
+    model.addAttribute("codigoPostal", codigoPostal);
     model.addAttribute("total", total);
     model.addAttribute("mensaje", mensaje);
            

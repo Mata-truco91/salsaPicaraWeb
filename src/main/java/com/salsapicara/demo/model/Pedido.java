@@ -16,14 +16,15 @@ public class Pedido {
     private String telefono;
     private int cantidad;
     private double total;
-
+private String codigoPostal;
     public Pedido() {
     }
 
-    public Pedido(String nombre, String telefono, int cantidad, double total) {
+    public Pedido(String nombre, String telefono, int cantidad,String codigoPostal, double total) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.cantidad = cantidad;
+        this.codigoPostal = codigoPostal;
         this.total = total;
     }
 
@@ -64,5 +65,15 @@ public class Pedido {
     public void setTotal(double total) {
         this.total = total;
     }
+
+
+    public String getcodigoPostal() {
+        return codigoPostal;
+    }
+
+    public void setcodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+
 }
 
