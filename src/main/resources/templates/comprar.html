@@ -46,13 +46,13 @@
 
 
     <!-- =========================================
-         CONTENIDO PRINCIPAL
+         CONTENIDO PRINCIPAL (2 COLUMNAS EN DESKTOP)
          ========================================= -->
 
     <main class="checkout-layout">
 
         <!-- -----------------------------------------
-             PRESENTACIÓN
+             COLUMNA 1: PRESENTACIÓN E IMÁGENES
              ----------------------------------------- -->
 
         <section class="checkout-intro">
@@ -70,32 +70,33 @@
                 su nuevo ingrediente favorito.
             </p>
 
-
             <!-- Galería del producto: una imagen arriba y dos abajo -->
+            <div class="product-gallery" aria-label="Galería de Salsa Pícara">
+                <img
+                    class="gallery-image gallery-image-top"
+                    th:src="@{/images/SalsaPicara-Presentacion250ml-1.png}"
+                    src="/images/SalsaPicara-Presentacion250ml-1.png"
+                    alt="Salsa Pícara, imagen principal"
+                >
+                <img
+                    class="gallery-image gallery-image-bottom"
+                    th:src="@{/images/SalsaPicara-Presentacion60ml.png}"
+                    src="/images/SalsaPicara-Presentacion60ml.png"
+                    alt="Salsa Pícara, detalle del producto"
+                >
+                <img
+                    class="gallery-image gallery-image-bottom"
+                    th:src="@{/images/SalsaPicara-Presentacion250ml-2.png}"
+                    src="/images/SalsaPicara-Presentacion250ml-2.png"
+                    alt="Salsa Pícara, presentación del producto"
+                >
+            </div>
 
-            <section aria-label="Galería de Salsa Pícara">
-    <div class="product-gallery">
-        <img
-            class="gallery-image gallery-image-top"
-            th:src="@{/images/SalsaPicara-Presentacion250ml-1.png}"
-            alt="Salsa Pícara, imagen principal"
-        >
-        <img
-            class="gallery-image gallery-image-bottom"
-            th:src="@{/images/SalsaPicara-Presentacion60ml.png}"
-            alt="Salsa Pícara, detalle del producto"
-        >
-        <img
-            class="gallery-image gallery-image-bottom"
-            th:src="@{/images/SalsaPicara-Presentacion250ml-2.png}"
-            alt="Salsa Pícara, presentación del producto"
-        >
-    </div>
-</section>
+        </section> <!-- AQUÍ FALTABA ESTE CIERRE -->
 
 
         <!-- -----------------------------------------
-             FORMULARIO DEL PEDIDO
+             COLUMNA 2: FORMULARIO DEL PEDIDO
              ----------------------------------------- -->
 
         <section class="order-card" aria-labelledby="order-title">
@@ -121,16 +122,13 @@
                 <span>MXN por paquete(12x60ml)</span>
             </p>
 
-            <form action="/pedidos" method="post">
+            <form th:action="@{/pedidos}" action="/pedidos" method="post">
 
                 <!-- Nombre -->
-
                 <div class="field">
-
                     <label for="nombre">
                         Nombre completo
                     </label>
-
                     <input
                         type="text"
                         id="nombre"
@@ -138,18 +136,13 @@
                         autocomplete="name"
                         required
                     >
-
                 </div>
 
-
                 <!-- Teléfono -->
-
                 <div class="field">
-
                     <label for="telefono">
                         Teléfono
                     </label>
-
                     <input
                         type="tel"
                         id="telefono"
@@ -157,36 +150,27 @@
                         autocomplete="tel"
                         required
                     >
-
                 </div>
 
                 <!-- Código Postal -->
                 <div class="field">
-
                     <label for="codigoPostal">
                         Código Postal
                     </label>
-
                     <input
                         type="text"
                         id="codigoPostal"
                         name="CodigoPostal"
-                    
                         autocomplete="postal-code"
                         required
                     >
-
                 </div>
 
-
                 <!-- Cantidad -->
-
                 <div class="field">
-
                     <label for="cantidad">
                         ¿Cuántas quieres?
                     </label>
-
                     <input
                         type="number"
                         id="cantidad"
@@ -195,17 +179,13 @@
                         value="1"
                         required
                     >
-
                 </div>
-                 
-                    <!-- Cantidad De Paquetes -->
-
+                  
+                <!-- Cantidad De Paquetes -->
                 <div class="field">
-
                     <label for="cantidadPaquetes">
-                        ¿Te gustaria un paquete?
+                        ¿Te gustaría un paquete?
                     </label>
-
                     <input
                         type="number"
                         id="cantidadPaquetes"
@@ -214,12 +194,9 @@
                         value="1"
                         required
                     >
-
                 </div>
-     
 
                 <!-- Enviar pedido -->
-
                 <button
                     type="submit"
                     class="boton boton-full"
@@ -237,3 +214,4 @@
 </body>
 
 </html>
+
