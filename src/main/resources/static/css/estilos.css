@@ -326,7 +326,6 @@ body {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
-    max-height: 160px;
     object-fit: cover;
     background: rgba(214, 173, 100, 0.12);
     border: 1px solid rgba(238, 214, 158, 0.32);
@@ -335,7 +334,6 @@ body {
 .gallery-image-top {
     grid-column: 1 / -1;
     aspect-ratio: 16 / 9;
-    max-height: 145px;
 }
 
 .gallery-image-bottom {
