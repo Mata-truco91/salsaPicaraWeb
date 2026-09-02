@@ -313,34 +313,30 @@ body {
     line-height: 1.75;
 }
 
-.mini-bottle {
-    width: 105px;
-    margin: 37px 0 0 61px;
-    filter: drop-shadow(8px 14px 11px rgba(0, 0, 0, 0.45));
-}
-
-.mini-cap {
-    width: 44px;
-    height: 21px;
-    margin: auto;
-    background: #b5833b;
-    border-radius: 4px 4px 1px 1px;
-}
-
-.mini-glass {
+.product-gallery {
     display: grid;
-    height: 160px;
-    color: #edcf85;
-    background: linear-gradient(90deg, #5c1b10, #bd421c, #59180f);
-    border: 1px solid var(--gold);
-    border-radius: 13px 13px 25px 25px;
-    place-items: center;
-    font: 17px / 0.9 "Playfair Display", serif;
-    text-align: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: min(330px, 100%);
+    margin: 37px 0 0 24px;
 }
 
-.mini-glass strong {
-    font-size: 24px;
+.gallery-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: rgba(214, 173, 100, 0.12);
+    border: 1px solid rgba(238, 214, 158, 0.32);
+}
+
+.gallery-image-top {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+}
+
+.gallery-image-bottom {
+    min-width: 0;
 }
 
 .order-card {
@@ -556,7 +552,7 @@ body {
         font-size: 61px;
     }
 
-    .mini-bottle {
+    .product-gallery {
         display: none;
     }
 

@@ -17,15 +17,17 @@ public class Pedido {
     private int cantidad;
     private double total;
 private String codigoPostal;
-    public Pedido() {
-    }
+ private int cantidadPaquetes;
 
-    public Pedido(String nombre, String telefono, int cantidad,String codigoPostal, double total) {
+
+    public Pedido(String nombre, String telefono, int cantidad,String codigoPostal, double total, int cantidadPaquetes) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.cantidad = cantidad;
         this.codigoPostal = codigoPostal;
         this.total = total;
+        this.cantidadPaquetes = cantidadPaquetes; 
+
     }
 
     public long getId() {
@@ -75,5 +77,15 @@ private String codigoPostal;
         this.codigoPostal = codigoPostal;
     }
 
-}
+    public int getCantidadPaquetes() {
+        return cantidadPaquetes;
+    }
 
+    public void setCantidadPaquetes(int cantidadPaquetes) {
+        this.cantidadPaquetes = cantidadPaquetes;
+    }
+
+
+
+
+}

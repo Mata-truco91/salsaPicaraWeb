@@ -36,18 +36,27 @@ public String pedido(
         @RequestParam("telefono") String telefono,
         @RequestParam("cantidad") int cantidad,
         @RequestParam("CodigoPostal") String codigoPostal,
+     @RequestParam("cantidadPaquetes") int cantidadPaquetes,
         Model model) {
 
         int precio = 150;
-        int total = precio * cantidad;
-
-        Pedido pedidos1 = new Pedido(nombre, telefono, cantidad, codigoPostal, total);
+       int precioPaquetes = 360;
+       
+       
+       
+        int totalIndividual = precio * cantidad;
+int totalPaquete = precioPaquetes * cantidadPaquetes;
+       double total = totalIndividual + totalPaquete;
+       
+        Pedido pedidos1 = new Pedido(nombre, telefono, cantidad, codigoPostal, total, cantidadPaquetes);
+             
 
     String mensaje =
             "Nuevo pedido - Salsa Pícara\n\n" +
             "Cliente: " + pedidos1.getNombre() + "\n" +
             "Teléfono: " + pedidos1.getTelefono() + "\n" +
             "Cantidad: " + pedidos1.getCantidad() + "\n" +
+"Cantidad de paquetes: " + pedidos1.getCantidadPaquetes() + "\n" +
             "Código Postal: " + pedidos1.getcodigoPostal() + "\n" +
             "Total: $" + pedidos1.getTotal() + " MXN";
          
@@ -59,6 +68,7 @@ public String pedido(
     model.addAttribute("telefono", telefono);
     model.addAttribute("cantidad", cantidad);
     model.addAttribute("codigoPostal", codigoPostal);
+    model.addAttribute("cantidadPaquetes", cantidadPaquetes);
     model.addAttribute("total", total);
     model.addAttribute("mensaje", mensaje);
            
@@ -78,4 +88,8 @@ public String pedido(
         model.addAttribute("nombreSalsa", "Salsa Pícara");
         return "comprar";
     }
+
+
+
+
 }

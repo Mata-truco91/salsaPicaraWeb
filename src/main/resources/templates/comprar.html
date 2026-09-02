@@ -71,22 +71,30 @@
             </p>
 
 
-            <!-- Botella decorativa -->
+            <!-- Galería del producto: una imagen arriba y dos abajo -->
 
-            <div class="mini-bottle" aria-hidden="true">
+            <div class="product-gallery" aria-label="Galería de Salsa Pícara">
 
-                <div class="mini-cap"></div>
+                <img
+                    class="gallery-image gallery-image-top"
+                    th:src="@{/images/SalsaPicara-Presentacion250ml-1.png}"
+                    src="/images/SalsaPicara-Presentacion250ml-1.png"
+                    alt="Salsa Pícara, imagen principal"
+                >
 
-                <div class="mini-glass">
+                <img
+                    class="gallery-image gallery-image-bottom"
+                    th:src="@{/images/SalsaPicara-Presentacion60ml.png}"
+                    src="/images/SalsaPicara-Presentacion60ml.png"
+                    alt="Salsa Pícara, detalle del producto"
+                >
 
-                    <span>
-                        Salsa
-                        <br>
-
-                        <strong>Pícara</strong>
-                    </span>
-
-                </div>
+                <img
+                    class="gallery-image gallery-image-bottom"
+                    th:src="@{/images/SalsaPicara-Presentacion250ml-2.png}"
+                    src="/images/SalsaPicara-Presentacion250ml-2.png"
+                    alt="Salsa Pícara, presentación del producto"
+                >
 
             </div>
 
@@ -114,7 +122,11 @@
                 $150
                 <span>MXN por botella</span>
             </p>
-
+  
+            <p class="price">
+                $360
+                <span>MXN por paquete</span>
+            </p>
 
             <form action="/pedidos" method="post">
 
@@ -186,13 +198,32 @@
                         type="number"
                         id="cantidad"
                         name="cantidad"
-                        min="1"
+                        min="0"
                         value="1"
                         required
                     >
 
                 </div>
+                 
+                    <!-- Cantidad De Paquetes -->
 
+                <div class="field">
+
+                    <label for="cantidadPaquetes">
+                        ¿Te gustaria un paquete?
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cantidadPaquetes"
+                        name="cantidadPaquetes"
+                        min="0"
+                        value="1"
+                        required
+                    >
+
+                </div>
+     
 
                 <!-- Enviar pedido -->
 
