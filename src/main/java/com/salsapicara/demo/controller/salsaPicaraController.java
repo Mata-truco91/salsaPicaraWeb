@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.salsapicara.demo.model.Pedido;
 import com.salsapicara.demo.repository.PedidoRepository;
@@ -89,7 +90,12 @@ int totalPaquete = precioPaquetes * cantidadPaquetes;
         return "comprar";
     }
 
+    @GetMapping("/redirectToWhatsapp")
+public String redirectToWhatsapp(@RequestParam("telefono") String telefono, RedirectAttributes redirectAttributes) {
+    String whatsappUrl = "https://wa.me/" + telefono;
+    redirectAttributes.addFlashAttribute("whatsappUrl", whatsappUrl);
+    return "redirect:" + whatsappUrl;
 
 
-
+ }
 }

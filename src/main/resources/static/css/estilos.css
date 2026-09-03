@@ -314,30 +314,69 @@ body {
     line-height: 1.75;
 }
 
-.product-gallery {
+.checkout-intro .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 12px 22px;
+    color: var(--cream, #fff8ee);
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--gold, #eed69e);
+    border-radius: 50px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.checkout-intro .whatsapp-btn:hover {
+    background-color: #25d366; /* Verde icónico de WhatsApp */
+    border-color: #25d366;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+
+/*--------------------------
+   GALERÍA DE PRODUCTOS
+   ----------------
+
+-------------------------*/
+
+    .product-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    width: min(320px, 100%);
-    margin: 37px 0 0 0; /* Ajustado a 0px a la izquierda para alinear con el texto */
+    gap: 16px;
+    width: min(300px, 100%); /* Ajusta este valor si quieres la galería más grande o pequeña */
+    margin: 37px 0 0 0;
+    align-items: center; /* Alinea verticalmente los productos en la cuadrícula */
 }
 
 .gallery-image {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    background: rgba(214, 173, 100, 0.12);
-    border: 1px solid rgba(238, 214, 158, 0.32);
+    height: auto; /* Mantiene la proporción nativa original de la imagen */
+    /* Sombra suave que rodea la silueta real del PNG transparente */
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.25)); 
+    transition: transform 0.3s ease;
 }
 
 .gallery-image-top {
-    grid-column: 1 / -1;
-    aspect-ratio: 16 / 9;
+    grid-column: 1 / -1; /* Ocupa todo el ancho superior */
 }
 
 .gallery-image-bottom {
     min-width: 0;
+}
+
+/* Efecto opcional: Elevación suave al pasar el cursor */
+.gallery-image:hover {
+    transform: translateY(-4px);
 }
 
 .order-card {
