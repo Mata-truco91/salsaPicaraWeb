@@ -17,8 +17,8 @@ public class TelegramService {
     private final HttpClient client = HttpClient.newHttpClient();
 
 private final String token = System.getenv("TELEGRAM_BOT_TOKEN");
-private final String chatId = System.getenv("TELEGRAM_CHAT_ID");
-   
+private final String chatId1 = System.getenv("TELEGRAM_CHAT_ID");
+   private final String chatId2 = System.getenv("TELEGRAM_CHAT_ID2");
 
     public void enviarMensaje(String mensaje) {
 
@@ -32,32 +32,45 @@ private final String chatId = System.getenv("TELEGRAM_CHAT_ID");
             String url = "https://api.telegram.org/bot"
                                                        + token
                                                               + "/sendMessage?chat_id="
-                                                                                          + chatId
+                                                                                          + chatId1
                                                                                                      + "&text="
                                                                                                                 + texto;
 
-            HttpRequest request = HttpRequest.newBuilder()
+              String url2= "https://api.telegram.org/bot"
+                                                       + token
+                                                              + "/sendMessage?chat_id="
+                                                                                          + chatId2
+                                                                                                     + "&text="
+                                                                                                                + texto;
+
+         
+         
+                     HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
                     .GET()
                     .build();
+             HttpRequest request2 = HttpRequest.newBuilder()
+                    .uri(URI.create(url2))
+                    .GET()
+                    .build();
 
-            HttpResponse<String> response =
+      
+                    HttpResponse<String> response =
                     client.send(
                             request,
-                            HttpResponse.BodyHandlers.ofString()
-
-                        );
+                            HttpResponse.BodyHandlers.ofString());
         
+             HttpResponse<String> response2 =
+                    client.send(
+                            request2,
+                            HttpResponse.BodyHandlers.ofString());   
 
-} catch (Exception e) {
+                        } catch (Exception e) {
             e.printStackTrace();
         }
      
 }
-public TelegramService() {
-    System.out.println("Token configurado: " + (token != null && !token.isBlank()));
-    System.out.println("Chat ID configurado: " + (chatId != null && !chatId.isBlank()));
-}   
+
 
 }
 
